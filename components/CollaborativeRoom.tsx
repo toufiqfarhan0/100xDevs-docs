@@ -7,7 +7,6 @@ import { ClientSideSuspense, RoomProvider } from "@liveblocks/react/suspense";
 
 const CollaborativeRoom = () => {
   return (
-    <div>
       <RoomProvider id="my-room">
         <ClientSideSuspense fallback={<div>Loading…</div>}>
           <div className="collaborative-room">
@@ -26,7 +25,6 @@ const CollaborativeRoom = () => {
           </div>
         </ClientSideSuspense>
       </RoomProvider>
-    </div>
   );
 };
 
