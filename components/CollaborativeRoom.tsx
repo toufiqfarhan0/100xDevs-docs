@@ -72,7 +72,7 @@ const CollaborativeRoom = ({
   return (
     <RoomProvider id={roomId}>
       <ClientSideSuspense fallback={<Loader/>}>
-        <div className="collaborative-room">
+        <div className="flex size-full max-h-screen flex-1 flex-col items-center overflow-hidden">
           <Header>
             <div
               ref={containeRef}
@@ -87,11 +87,11 @@ const CollaborativeRoom = ({
                   onChange={(e) => setDocumentTitle(e.target.value)}
                   onKeyDown={updateTitleHandler}
                   disabled={!editing}
-                  className="document-title-input"
+                  className="min-w-[78px] border-none bg-transparent px-0 text-left text-base font-semibold leading-[24px] focus-visible:ring-0 focus-visible:ring-offset-0 disabled:text-black sm:text-xl md:text-center"
                 />
               ) : (
                 <>
-                  <p className="document-title">{documentTitle}</p>
+                  <p className="line-clamp-1 border-dark-400 text-base font-semibold leading-[24px] sm:pl-0 sm:text-xl">{documentTitle}</p>
                 </>
               )}
 
@@ -107,7 +107,7 @@ const CollaborativeRoom = ({
               )}
 
               {currentUserType !== "editor" && !editing && (
-                <p className="view-only-tag">View only</p>
+                <p className="rounded-md bg-dark-400/50 px-2 py-0.5 text-xs text-blue-100/50">View only</p>
               )}
 
               {loading && <p className="text-sm text-gray-400">Saving....</p>}

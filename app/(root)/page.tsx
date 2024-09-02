@@ -19,7 +19,7 @@ const Home = async () => {
   );
 
   return (
-    <main className="home-container">
+    <main className="relative flex min-h-screen w-full flex-col items-center gap-5 sm:gap-10">
       <Header className="sticky left-0 top-0">
         <div className="flex items-center gap-2 lg:gap-4">
           <Notifications />
@@ -29,17 +29,17 @@ const Home = async () => {
         </div>
       </Header>
       {roomDocuments.data.length > 0 ? (
-        <div className="document-list-container">
-          <div className="document-list-title">
-            <h3 className="text-28-semibold">All documents</h3>
+        <div className="flex flex-col items-center mb-10 w-full gap-10 px-5">
+          <div className="max-w-[730px] items-end flex w-full justify-between">
+            <h3 className="text-[28px] font-semibold">All documents</h3>
             <AddDocumentBtn
               userId={clerkUser.id}
               email={clerkUser.emailAddresses[0].emailAddress}
             />
           </div>
-          <ul className="document-ul">
+          <ul className="flex w-full max-w-[730px] flex-col gap-5">
             {roomDocuments.data.map(({ id, metadata, createdAt }: any) => (
-              <li key={id} className="document-list-item">
+              <li key={id} className="flex items-center justify-between gap-4 rounded-lg bg-doc bg-cover p-5 shadow-xl">
                 <Link
                   href={`/documents/${id}`}
                   className="flex flex-1 items-center gap-4"
@@ -65,7 +65,7 @@ const Home = async () => {
           </ul>
         </div>
       ) : (
-        <div className="document-list-empty">
+        <div className="flex w-full max-w-[730px] flex-col items-center justify-center gap-5 rounded-lg bg-dark-200 px-10 py-8">
           <Image
             src="/assets/icons/doc.svg"
             alt="Document"

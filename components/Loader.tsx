@@ -3,7 +3,7 @@ import React from "react";
 
 const Loader = () => {
   return (
-    <div className="loader">
+    <div className="flex size-full h-screen items-center justify-center gap-3 text-white">
       <Image
         src="/assets/icons/loader.svg"
         alt="loader"

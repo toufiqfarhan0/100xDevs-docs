@@ -12,7 +12,7 @@ const ThreadWrapper = ({ thread }: ThreadWrapperProps) => {
       thread={thread}
       data-sate={isActive ? "active" : null}
       className={cn(
-        "comment-thread border",
+        "w-full max-w-[800px] border border-dark-300 bg-dark-200 shadow-sm lg:w-[350px] transition-all",
         isActive && "!border-blue-500 shadow-md",
         thread.resolved && "opacity-40"
       )}
@@ -24,8 +24,8 @@ const Comments = () => {
   const { threads } = useThreads();
 
   return (
-    <div className="comments-container">
-      <Composer className="comment-composer" />
+    <div className="mb-10 space-y-4 lg:w-fit flex w-full flex-col items-center justify-center">
+      <Composer className="w-full max-w-[800px] border border-dark-300 bg-dark-200 shadow-sm lg:w-[350px]" />
       {threads.map((thread) => (
         <ThreadWrapper key={thread.id} thread={thread} />
       ))}

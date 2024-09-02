@@ -22,7 +22,7 @@ const AddDocumentBtn = ({ userId, email }: AddDocumentBtnProps) => {
     <Button
       type="submit"
       onClick={addDocumentHandler}
-      className="gradient-blue flex gap-1 shadow-md"
+      className="bg-gradient-to-t from-blue-500 to-blue-400 flex gap-1 shadow-md"
     >
       <Image src="/assets/icons/add.svg" alt="Add" width={24} height={24} />
       <p className="hidden sm:block"> Start a blank document</p>

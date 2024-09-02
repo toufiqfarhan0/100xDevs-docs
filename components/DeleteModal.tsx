@@ -48,7 +48,7 @@ export const DeleteModal = ({ roomId }: DeleteModalProps) => {
           />
         </Button>
       </DialogTrigger>
-      <DialogContent className="shad-dialog">
+      <DialogContent className="w-full max-w-[400px] rounded-xl border-none bg-doc bg-cover px-5 py-7 shadow-xl sm:min-w-[500px]">
         <DialogHeader>
           <Image
             src="/assets/icons/delete-modal.svg"
@@ -72,7 +72,7 @@ export const DeleteModal = ({ roomId }: DeleteModalProps) => {
           <Button
             variant="destructive"
             onClick={deleteDocumentHandler}
-            className="gradient-red w-full"
+            className="bg-gradient-to-t from-red-500 to-red-400 w-full"
           >
             {loading ? "Deleting..." : "Delete"}
           </Button>

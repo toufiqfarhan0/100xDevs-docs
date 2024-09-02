@@ -4,9 +4,9 @@ import Link from "next/link";
 import React from "react";
 
 
-const Header = ({ children, className }: HeaderProps) => {
+const Header = ({ children}: HeaderProps) => {
   return (
-    <div className={cn("header", className)}>
+    <div className="min-h-[92px] min-w-full flex-nowrap bg-dark-500 flex w-full items-center justify-between gap-2 px-4">
       <Link href="/" className="md:flex-1">
         {/* <Image
           src="/assets/icons/logo.svg"

@@ -6,7 +6,7 @@ const ActiveCollaborators = () => {
 
   const collaborators = others.map((other) => other.info);
   return (
-    <ul className="collaborators-list">
+    <ul className="hidden items-center justify-end -space-x-3 overflow-hidden sm:flex">
       {collaborators.map(({ id, avatar, name, color }) => (
         <li key={id}>
           <Image

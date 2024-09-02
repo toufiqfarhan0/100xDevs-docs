@@ -63,7 +63,7 @@ const ShareModal = ({
           <p className="mr-1 hidden sm:block">Share</p>
         </Button>
       </DialogTrigger>
-      <DialogContent className="shad-dialog">
+      <DialogContent className="w-full max-w-[400px] rounded-xl border-none bg-doc bg-cover px-5 py-7 shadow-xl sm:min-w-[500px]">
         <DialogHeader>
           <DialogTitle>Manage who can view this project</DialogTitle>
           <DialogDescription>
@@ -78,14 +78,14 @@ const ShareModal = ({
                 id="email"
                 placeholder="Enter email address"
                 onChange={(e) => setEmail(e.target.value)}
-                className="share-input"
+                className="h-11 flex-1 border-none bg-dark-400 focus-visible:ring-0 focus-visible:ring-offset-0"
               />
               <UserTypeSelector userType={userType} setUserType={setUserType} />
             </div>
             <Button
               type="submit"
               onClick={shareDocumentHandler}
-              className="gradient-blue flex h-full gap-1 px-5"
+              className="bg-gradient-to-t from-blue-500 to-blue-400 flex h-full gap-1 px-5"
               disabled={loading}
             >
               {loading ? "Sending..." : "Invite"}

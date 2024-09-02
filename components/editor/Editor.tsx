@@ -50,12 +50,12 @@ export function Editor({
   return (
     <LexicalComposer initialConfig={initialConfig}>
       <div className="editor-container size-full">
-        <div className="toolbar-wrapper flex min-w-full justify-between">
+        <div className="z-50 custom-scrollbar w-screen overflow-auto border-y border-dark-300 bg-dark-100 pl-3 pr-4 shadow-sm flex min-w-full justify-between">
           <ToolbarPlugin />
           {currentUserType === "editor" && <DeleteModal roomId={roomId} />}
         </div>
 
-        <div className="editor-wrapper flex flex-col items-center justify-start">
+        <div className="custom-scrollbar h-[calc(100vh-140px)] gap-5 overflow-auto px-5 pt-5 lg:flex-row lg:items-start lg:justify-center  xl:gap-10 xl:pt-10 flex flex-col items-center justify-start">
           {status === "not-loaded" || status === "loading" ? <Loader /> : (
             <div className="editor-inner min-h-[1100px] relative mb-5 h-fit w-full max-w-[800px] shadow-md lg:mb-10">
               <RichTextPlugin
